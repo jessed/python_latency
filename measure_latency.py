@@ -37,12 +37,8 @@ def main():
     if payload[0:6].hex() == '000000000000':
       header, payload = pcap.next()
   
-  
     # process packet
-#    if l > 150:
-    # deteremine ethernet type (with or without 802.1q header)
     etherType = payload[12:14]
-  
     if etherType.hex() == '0800':
       pkt = get_pkt_data_no_vlan(payload)
     elif etherType.hex() == '8100':
@@ -58,10 +54,8 @@ def main():
       # print packet details + the first line of the HTTP data
       print('%f %15s -> %15s  %10d, %10d: %s' % ( ts, pkt['sa'], pkt['da'], pkt['seq'], pkt['ack'], request))
   
-  
     # read the next packet
     header, payload = pcap.next()
-
 
 
 ##
@@ -69,7 +63,7 @@ def main():
 ##
 
 # Create float (decimal) using math module (faster than from strings)
-# (No, I don't actually understand the math)
+# No, I don't actually understand the math
 def combine(t, m):
   if m == 0:
     return t
