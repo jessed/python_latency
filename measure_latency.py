@@ -8,10 +8,11 @@ from math import floor, log10
 
 ## Global Variables
 DEBUG       = 0
+file        = 'sample_captures/2.pcap'
 
 
 def main():
-  file      = '2.pcap'      # packet capture filename
+  #file      = '2.pcap'      # packet capture filename
   count     = 0             # packet number
 
   # Open packet capture file
