@@ -14,7 +14,8 @@ the unidirectional latency introduced by the device being measured.
 * Packet header offsets are currently hard-coded rather than dynamically calculated as the headers are processed
 
 
-## Future Enhancements (TODO)
+## Future Enhancements (See Issues)
+* Support for L4-only measurement (remove HTTP restriction)
 * Update header field offset calculation to be dynamic rather than static
 * Support for multiple concurrent sessions
 * Support for UDP latency 
